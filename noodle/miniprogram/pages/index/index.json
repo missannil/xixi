@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "h-tabbar": "/components/h-tabbar/h-tabbar",
+    "h-navigation": "/components/h-navigation/h-navigation",
+    "h-description": "/components/h-description/h-description",
+    "h-sidebar": "/components/h-sidebar/h-sidebar",
+    "h-cart": "/components/h-cart/h-cart",
+    "h-category": "/components/h-category/h-category",
+    "h-search": "/components/h-search/h-search"
+  }
+}

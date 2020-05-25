@@ -1,0 +1,10 @@
+@import "style/iconfont.wxss"; 
+@import "style/mymain.wxss";
+/* @import "./miniprogram_npm/@vant/weapp/common/index.wxss"; */
+
+
+::-webkit-scrollbar{display: none;}
+
+::-webkit-scrollbar-track{display: none;}
+
+::-webkit-scrollbar-thumb{display: none;}

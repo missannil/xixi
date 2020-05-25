@@ -1,0 +1,13 @@
+/* components/h-goodsShow/h-goodsShow.wxss */
+
+.addCart,
+.reduceCart{
+    height: 40rpx;
+    width: 40rpx;
+    line-height: 40rpx;
+    display: inline-block;
+    border-radius: 50%;
+    color: white;
+    background: #18b357;
+}
+

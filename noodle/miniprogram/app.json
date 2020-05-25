@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/location/location",
+    "pages/pay/pay",
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

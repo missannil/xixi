@@ -1,0 +1,15 @@
+<!--components/h-tabbar/index.wxml-->
+<!-- 索引页底部导航栏 
+ 1. 需要外部传入bottomTabBarList 一般由config文件传入
+ 2. 默认引入外部引入mymain.css和iconfont.wxss,背景颜色由mymain控制
+ 3. 内部事件通过triggerEvent向外部传递当前索引值 用于改变外部的渲染
+ 4. 外部可选size 和iconSize来改变字体和图形字体大小 组件默认 28 50
+ -->
+<view  class="safeArea height-98 border-top flex justify-around" >
+    <block wx:for="{{tabbarList}}" wx:key="name">
+        <view class="flex center column justify-evenly {{index==active ?'color-theme':'color-aaa'}}" bind:tap="changeIndex" data-index="{{index}}" >
+            <i class="{{index==active ? item.icon.selected:item.icon.default}} font-44 "/>
+            <view class="font-24 ">{{item.name}}</view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,52 @@
+<!-- components/h-goodsShow/h-goodsShow.wxml -->
+<!-- 1. bgColor 背景颜色 默认white
+     2. color 
+     3. 需要注意的是为了兼容三种情况的渲染，第一种 2级菜单传入，
+        判断是(goodsList.length&&goodsList[0].children)满足就是第一种情况
+        第二种情况是 搜索结果也用这个组件，那么第一层循环只用了一次，第二层循环才循环他本身
+        第三中情况是，购物车的list菜单，第一层循环1此，第二次循环更具cart来的，前面2个判断都不过
+    -->
+<view class="" wx:if="{{!column}}">row</view>
+
+<scroll-view wx:else class="height-24" column scroll-y scroll-top="{{top}}">
+	<block wx:for="{{(goodsList.length&&goodsList[0].children)?goodsList:1}}" wx:key="index">
+		<block wx:for="{{item.children||(goodsList.length?goodsList:0) ||cart}}" wx:key="index">
+
+			<view class="height-200 border-bottom flex border-box padding-20-2bottom" style="background-color:{{bgColor}};color:{{color}}">
+				<view class="size-160 margin-0-20 flex-none" wx:if="{{showSelected}}">
+					<h-selectBox  bind:change="changeHandle" data-goods_id="{{item.goods_id}}" selected="{{cart_obj[item.goods_id].selected}}" />
+				</view>
+				<view class="size-160 flex-none radius-20 bg-ddd">
+					<image src="" mode="aspectFit" lazy-load="true"></image>
+				</view>
+				<view class="width-24 flex column padding-left-20 justify-evenly">
+					<view class="color-black">
+						<text>{{item.name}}</text>
+					</view>
+					<block wx:for="{{item.detail}}"wx:key="index">
+						<view class="font-24 color-aaa">
+							<text>{{item}}</text>
+						</view>
+					</block>
+					<view class="flex justify-between color-red">
+						<view class="margin-left-010 ">
+							<i class="i-renminbi font-40" />
+							<text>{{item.price}}</text>
+						</view>
+						<view class="width-170 flex justify-end" style="{{item.count || cart_obj[item.goods_id].count ?'justify-content: space-between;':''}}">
+							<view class="reduceCart" data-goods_id="{{item.goods_id}}" catch:tap="reduce" wx:if="{{ item.count || cart_obj[item.goods_id].count}}">
+								<i class="i-jian font-40" />
+							</view>
+							<view class="color-black" wx:if="{{item.count || cart_obj[item.goods_id].count}}">
+								{{item.count || cart_obj[item.goods_id].count}}
+							</view>
+							<view class="addCart" data-goodsdata="{{item}}" catch:tap="add">
+								<i class="i-jia font-40" />
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</block>
+</scroll-view>

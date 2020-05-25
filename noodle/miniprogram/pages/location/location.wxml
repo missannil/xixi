@@ -1,0 +1,16 @@
+<!-- miniprogram/pages/location/location.wxml -->
+<!-- 店铺位置 -->
+<!-- 我的位置 -->
+<view class="container">
+    <h-navigation title="商家位置" back />
+    <map id="shop" show-compass show-scale longitude="{{description.longitude}}" latitude="{{description.latitude}}" scale="15" bindregionchange="regionchangeEvent" markers="{{description.markers}}" style="width: 100%; height: 1014rpx;"></map>
+    <view class="height-200 border-box padding-20 flex  align-center">
+        <view class="flex-1">
+            <view class="bold">{{description.shopName}}</view>
+            <view class="padding-4-0 ">{{description.address}}</view>
+        </view>
+        <view class="width-100 height-100 margin-left-4 bg-theme text-center radius-50 color-white line-100" catch:tap="seleteMap">
+            导航
+        </view>
+    </view>
+</view>

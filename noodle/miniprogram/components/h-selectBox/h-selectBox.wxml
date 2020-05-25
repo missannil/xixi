@@ -1,0 +1,4 @@
+<!--components/h-selected/h-selected.wxml-->
+<view class="color-{{color}} width-24 height-24 flex justify-center align-center" catchtap="turnHandle">
+       <i class="i-{{selected?'xuanzhong':'weixuanzhong'}}"/>
+</view>

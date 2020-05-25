@@ -1,0 +1,49 @@
+<!-- components/h-search/h-search.wxml -->
+<view class=" border-box padding-20" style="background-color:{{bgColor}};width:{{width}};height:{{height}}">
+  <view class=" relative width-24 height-24 bg-white radius-10 flex justify-center align-center">
+    <input class="text-center  width-16" adjust-position="false" confirm-type="search" hold-keyboard="true" value="{{inputValue}}" placeholder="商品搜索" placeholder-class="color-aaa" maxlength="7" bindconfirm="confirm" bindfocus="focus" bindinput="inputhandle"></input>
+    <view class=" channel color-aaa  text-center absolute z-2" bind:tap="channelHandle" wx:if="{{channel}}">
+      取消
+    </view>
+  </view>
+</view>
+<view class="absolute width-24 border-box  bg-white z-2" style="height:714rpx" wx:if="{{onfoucs}}">
+  <view class="" style="">
+    <view class="padding-20 flex justify-between">
+      <view class="">历史搜索</view>
+      <view class="" catch:tap="clearHis">清空记录</view>
+    </view>
+    <view class="flex flex-wrap ">
+      <block wx:for="{{description.historyWords}}" wx:key="index">
+        <view class=" font-28 bg-eee color-666 margin-10 padding-10-20" catch:tap="addSearch" data-name="{{item}}">
+          {{item}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="">
+    <view class="padding-20">热门搜索</view>
+    <view class="flex flex-wrap">
+      <block wx:for="{{description.hotWords}}" wx:key="index">
+        <view class="font-28 bg-eee color-666 margin-10 padding-10-20" catch:tap="addSearch" data-name="{{item}}">
+          {{item}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="absolute width-24 border-box  bg-white z-2" style="height:714rpx" wx:if="{{result}}">
+  <view class="flex column justify-center height-24 text-center" wx:if="{{searchResult.length ==0}}">
+    <view class="">
+      <i class="i-yihan font-50" />
+      <i class="i-henyihan font-50 padding-20"/>
+    </view>
+    <view class="color-black padding-20">暂无相关商品</view>
+    <view class="" >
+     我们会陆续添加商品,敬请期待
+    </view>
+  </view>
+  <view class="height-24" wx:else>
+    <h-goodsList  goodsList="{{searchResult}}"column />
+  </view>
+</view>

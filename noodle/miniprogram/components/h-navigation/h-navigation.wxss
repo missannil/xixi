@@ -1,0 +1,6 @@
+/* components/cu-navigation/cu-navigation.wxss */
+.i-arrowLeft {
+    padding-left: 20rpx;
+    padding-right: 8rpx;
+}
+

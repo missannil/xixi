@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "h-cart":"/components/h-cart/h-cart",
+    "h-sidebar":"/components/h-sidebar/h-sidebar",
+    "h-goodsList":"/components/h-goodsList/h-goodsList",
+    "h-search":"/components/h-search/h-search"
+  }
+}

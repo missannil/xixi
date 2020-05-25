@@ -1,0 +1,5 @@
+/* components/h-search/h-search.wxss */
+.channel {
+  width: 100rpx;
+    right: 20rpx;
+}

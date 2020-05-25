@@ -1,0 +1,23 @@
+<!-- 顶部自定义的导航栏 
+ 1. 需要配合mymain.wxss样式和iconfont.wxss字体文件(icon-arrowLeft)
+ 2. back 是否出现返回按钮 默认不显示
+ 3. size title文字大小，默认40rpx 返回按钮大小 -4 rpx
+ 4. title 中间内容文字 
+ 5. titleColor 默认theme
+ 6. bgColor 默认theme
+ 7. backColor默认theme
+    
+  -->
+<view class="bg-theme color-white" style="height:{{navigationBarHeight}}px;background-color:{{bgColor}}">
+    <view class="width-16 height-24 border-box flex align-center " style="padding-top:{{statusBarHeight}}px">
+       <view class="flex-1 font-{{size - 4}};"bind:tap="navigateBack" >
+         <view wx:if="{{back}}"  style="color:{{backColor}}">
+            <i class="i-arrowLeft"/>
+            <text>返回</text>
+         </view>
+        </view>
+        <view class="flex-1 text-center font-{{size}}" style="color:{{titleColor}}">
+            {{title}}
+        </view>
+    </view>
+</view>

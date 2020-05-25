@@ -1,0 +1,10 @@
+<!-- components/sidebar/sidebar.wxml -->
+<scroll-view class="width-24 height-24 color-666" scroll-y scroll-top="0" style="background-color: {{bgColor}};">
+    <block wx:for="{{categoryList}}" wx:key="index">
+        <view class="flex align-center height-100 border-box" bind:tap="changeIndex" data-index="{{index}}" style="background-color:{{curIndex == index? activeBgColor:';border-bottom:2rpx solid #ddd'}}">
+            <view class="text-center flex-auto " style="color:{{curIndex == index? activeColor:''}};{{curIndex == index?'border-left:10rpx solid' :''}}">
+                {{item.category_name}}
+            </view>
+        </view>
+    </block>
+</scroll-view>

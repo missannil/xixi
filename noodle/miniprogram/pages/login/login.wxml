@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="width-24 height-24">
+	<h-navigation back title="登录" />
+	<view class="width-24 height-200 line-200 bold text-center font-50">
+		欢迎来到{{storeName}}
+	</view>
+	<view class="size-160 radius-30 margin-0-auto-60 hidden">
+		<image src="{{description.pic}}" />
+	</view>
+	<view class="text-center">
+		<view class="padding-20 font-40">
+			该程序将获取以下授权
+		</view>
+		<view class="color-aaa">
+			获得您的公开信息(昵称、头像等)
+		</view>
+	</view>
+	<view class="width-300 height-92 margin-50-auto radius-46 hidden">
+		<button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 允许 </button>
+
+	</view>
+
+	<view class="text-center color-aaa margin-50-auto width-300 height-100  line-100 radius-50" bindtap="back">
+		拒绝
+	</view>
+</view>

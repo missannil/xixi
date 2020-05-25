@@ -1,0 +1,21 @@
+<!-- index.wxml -->
+<view class="flex column height-24">
+  <h-navigation title="{{tabbarList[active].title}}" />
+  <view class="flex flex-1 column hidden" wx:if="{{active == 0}}">
+    <h-description />
+    <h-category class="flex-1 hidden" />
+  </view>
+  <view class="height-24" wx:if="{{active == 1}}">订单页</view>
+  <view class="height-24" wx:if="{{active == 2}}">
+            <!-- 登录按钮部分 -->
+            <view class="width-24 height-300 bg-theme">
+                   <view class="width-12 height-24 flex align-center justify-between">
+                       <image class="size-150 margin-left-40" src="./user-unlogin.png"></image>
+                       <view class="color-white font-24 border padding-10-30 radius-30"
+                             bindtap="navigateTo"
+                       >登录/注册</view>
+                   </view>
+            </view>
+  </view>
+  <h-tabbar tabbarList="{{tabbarList}}" bind:changeActive="changeActive" />
+</view>

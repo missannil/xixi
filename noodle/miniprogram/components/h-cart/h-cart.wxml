@@ -1,0 +1,37 @@
+<!-- components/h-cart/h-cart.wxml -->
+<view class="relative flex z-2">
+		<view class="flex width-17 bg-ddd" catch:tap="showGoodsList">
+				<view class="width-200 height-100 color-white">
+						<view class="cart relative bg-theme  radius-50">
+								<i class="i-cart  font-60 absolute " />
+								<view class="dot text-center">{{goodsCount}}</view>
+						</view>
+				</view>
+				<view class="color-red flex justify-center align-center">
+						<i class="i-renminbi font-40 " />
+						<text class="font-40">{{totalPrice}}</text>
+						<!-- <view class="freight font-28 color-666">配送费:{{description.freight}}</view> -->
+				</view>
+				<view class="showList" catch:tap="stopBubble" wx:if="{{showList}}">
+						<view class="title flex justify-between">
+								<view class="flex ">
+										<view class="margin-right-20">全选</view>
+										<h-selectBox color="white" selected="{{allSelected}}" bind:change="changeHandle" />
+								</view>
+								<view class="width-160 text-center">购物车</view>
+								<view catch:tap="cartClear">
+										<i class="i-lajitong " />
+										清空
+								</view>
+						</view>
+						<h-goodsList showSelected goodsList="cart" column />
+				</view>
+		</view>
+		<view class="pay width-7 height-100 text-center " catch:tap="navigatorTo">
+				<text wx:if="{{totalPrice == 0}}">满{{description.quota}}元起送</text>
+				<text wx:elif="{{totalPrice < description.quota}}">
+						还差{{description.quota - totalPrice }}元起送
+				</text>
+				<text wx:else>去结算</text>
+		</view>
+</view>

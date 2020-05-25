@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "h-navigation":"/components/h-navigation/h-navigation"
+  }
+}

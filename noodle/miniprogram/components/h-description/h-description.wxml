@@ -1,0 +1,38 @@
+<!-- components/h-description/h-description.wxml -->
+<!-- 1. description 传入商家数据       默认引入 import {description} from "../../config/systemConfig";
+    2. url         传入跳转页面路径    默认 "/pages/location/location"
+    3. bgColor     传入背景颜色         默认 bg-theme
+    4. color       传入字体颜色         默认 theme
+    5. 图片比例为 16 : 9
+    6. 组件高度为220rpx -->
+<view class="padding-20 height-200 border-box flex theme " style="background-color:{{bgColor}};color:{{color}}">
+    <image class="radius-20 flex-none " src="{{description.pic}}" mode="aspectFit"></image>
+    <view class="flex-1 hidden flex column relative  justify-between margin-left-20">
+        <view class="flex justify-evenly width-24">
+            <view class="ellipsis bold width-21 ">
+                <i class="i-laba" />
+                {{description.notice}}
+            </view>
+            <view class="width-3 relative" catch:tap="showMaskEvent">
+                <i class="i-arrowRight absolute right-010 top-2 font-40" />
+            </view>
+        </view>
+        <view class="font-28">配送费:{{description.freight}} | 范围:{{description.range}}公里</view>
+        <view class="font-28">营业时间:{{description.businessHours}}</view>
+        <view class=" absolute font-32 border  right bottom" bind:tap="navigate">位置导航</view>
+    </view>
+    <h-mask show="{{maskShow}}">
+        <view class="height-24 width-24 flex column color-black">
+            <view class="flex-1 border-box padding-20 ">
+                <view class="color-theme  text-center bold">商家公告</view>
+                <view class="font-32 padding-20 ">{{description.notice}}</view>
+            </view>
+            <view class="flex-1 border-box padding-20">
+                <view class=" color-theme text-center bold">优惠信息</view>
+                <block wx:for="{{description.discount}}" wx:key="index">
+                    <view class="font-32 padding-10-20">{{item}}</view>
+                </block>
+            </view>
+        </view>
+    </h-mask>
+</view>

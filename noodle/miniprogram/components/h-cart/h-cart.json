@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents":{
+    "h-goodsList":"/components/h-goodsList/h-goodsList",
+    "h-selectBox":"/components/h-selectBox/h-selectBox"
+  }
+}

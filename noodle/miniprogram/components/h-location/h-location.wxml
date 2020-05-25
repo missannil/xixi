@@ -1,0 +1,25 @@
+<!-- components/h-location/h-location.wxml -->
+<view class="container height-300 bg-theme">
+    <view class="h-location height-24 border-20 bd-color-theme  border-box padding-20 bg-white radius-40 flex column">
+       <view class="" wx:if="{{deliveryAddress}}" >
+           
+       </view>
+       <view class="location height-12 flex ">
+            <view class="_left width-22 border-bottom">
+                <view class="community bold font-36 ellipsis">地址...........</view>
+                <view class="name">赵先生 电话133333333</view>
+            </view>
+            <view class="_right width-2" style="line-height:110rpx">
+                <i class="i-arrowRight font-40  " />
+            </view>
+        </view>
+        <view class="deliveryTime height-12 width-24">
+            <view class="title">送达时间</view>
+            <view class="">
+                为选择(必选)
+                <i class="i-arrowRight font-40  " />
+            </view>
+            <view class="提示">为减少接触，封闭管理时，请在地址中更新具体取餐地点</view>
+        </view>
+    </view>
+</view>

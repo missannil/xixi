@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+   "h-selectBox":"/components/h-selectBox/h-selectBox"
+  }
+}

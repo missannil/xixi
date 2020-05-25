@@ -1,0 +1,8 @@
+<!--miniprogram/pages/pay/pay.wxml-->
+
+<view class="h-pay height100" >
+    <h-navigation back title="提交订单" />
+    <h-location  />
+  
+    
+</view>

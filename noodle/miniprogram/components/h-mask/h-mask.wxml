@@ -1,0 +1,6 @@
+<!-- components/h-mask/h-mask.wxml -->
+<view class="fixed mask left z-3" style="top:{{top}}px;height:{{height}};width:{{width}}rpx;" wx:if="{{show}}" wx:if="{{show}}" catch:tap="hidMask">
+    <view class="absolute  bg-white border-box padding-20 radius-20  position-center" style="width:{{innerWidth}}rpx;height:{{innerHeight}}rpx;" catch:tap="stopBubble">
+        <slot />
+    </view>
+</view>

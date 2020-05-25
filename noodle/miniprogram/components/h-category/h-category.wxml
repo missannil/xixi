@@ -1,0 +1,9 @@
+<!-- components/h-category/h-category.wxml -->
+<view class="height-24 flex column">
+	<h-search />
+	<view class="flex flex-1 hidden">
+		<h-sidebar class="width-200 height-24 flex-none" bind:getIndex="getIndex" />
+		<h-goodsList class="width-24 height-24" column goodsList="{{categoryList}}" curIndex="{{curIndex}}" />
+	</view>
+	<h-cart />
+</view>
